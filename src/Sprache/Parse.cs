@@ -60,6 +60,7 @@ namespace Sprache
             return Char(ch => c == ch, char.ToString(c));
         }
 
+        /*
 
         /// <summary>
         /// Parse a single character of any in c
@@ -81,6 +82,7 @@ namespace Sprache
             return Char(c.Contains, string.Join("|", c.ToCharArray()));
         }
 
+        */
 
         /// <summary>
         /// Parse a single character except c.
@@ -91,6 +93,8 @@ namespace Sprache
         {
             return CharExcept(ch => c == ch, char.ToString(c));
         }
+
+        /*
 
         /// <summary>
         /// Parses a single character except for those in the given parameters
@@ -113,6 +117,8 @@ namespace Sprache
             return CharExcept(c.Contains, string.Join("|", c.ToCharArray()));
         }
 
+        */ 
+        
         /// <summary>
         /// Parse a single character in a case-insensitive fashion.
         /// </summary>
@@ -213,7 +219,7 @@ namespace Sprache
 
                 if (result.WasSuccessful)
                 {
-                    var msg = string.Format("`{0}' was not expected", string.Join(", ", result.Expectations));
+                    var msg = string.Format("`{0}' was not expected", string.Join(", ", result.Expectations.ToArray()));
                     return Result.Failure<object>(i, msg, new string[0]);
                 }
                 return Result.Success<object>(null, i);
