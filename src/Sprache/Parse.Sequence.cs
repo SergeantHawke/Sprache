@@ -55,7 +55,7 @@
                             : r.Remainder.Current.ToString();
 
                         var msg = string.Format("Unexpected '{0}'", what);
-                        var exp = string.Format("'{0}' {1} times, but was {2}", string.Join(", ", r.Expectations), count, n);
+                        var exp = string.Format("'{0}' {1} times, but was {2}", string.Join(", ", r.Expectations.ToArray()), count, n);
                         return Result.Failure<IEnumerable<T>>(i, msg, new[] { exp });
                     }
 

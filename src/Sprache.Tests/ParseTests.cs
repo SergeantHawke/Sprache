@@ -30,7 +30,7 @@ namespace Sprache.Tests
         {
             AssertParser.Fails(Parse.Char('a').Once(), "");
         }
-
+/*
         [Test]
         public void Parser_OfChars_AcceptsAnyOfThoseChars()
         {
@@ -47,7 +47,7 @@ namespace Sprache.Tests
             AssertParser.SucceedsWithOne(parser, "a", 'a');
             AssertParser.SucceedsWithOne(parser, "b", 'b');
             AssertParser.SucceedsWithOne(parser, "c", 'c');
-        }
+        }*/
 
         [Test]
         public void Parser_OfManyChars_AcceptsEmptyInput()
