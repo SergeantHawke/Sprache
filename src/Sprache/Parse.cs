@@ -60,7 +60,29 @@ namespace Sprache
             return Char(ch => c == ch, char.ToString(c));
         }
 
+        /*
 
+        /// <summary>
+        /// Parse a single character of any in c
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public static Parser<char> Chars(params char[] c)
+        {
+            return Char(c.Contains, string.Join("|", c));
+        }
+
+        /// <summary>
+        /// Parse a single character of any in c
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public static Parser<char> Chars(string c)
+        {
+            return Char(c.Contains, string.Join("|", c.ToCharArray()));
+        }
+
+        */
 
         /// <summary>
         /// Parse a single character except c.
@@ -72,8 +94,31 @@ namespace Sprache
             return CharExcept(ch => c == ch, char.ToString(c));
         }
 
+        /*
 
+        /// <summary>
+        /// Parses a single character except for those in the given parameters
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public static Parser<char> CharExcept(IEnumerable<char> c)
+        {
+            var chars = c as char[] ?? c.ToArray();
+            return CharExcept(chars.Contains, string.Join("|", chars));
+        }
 
+        /// <summary>
+        /// Parses a single character except for those in c
+        /// </summary>  
+        /// <param name="c"></param>
+        /// <returns></returns> 
+        public static Parser<char> CharExcept(string c)
+        {
+            return CharExcept(c.Contains, string.Join("|", c.ToCharArray()));
+        }
+
+        */ 
+        
         /// <summary>
         /// Parse a single character in a case-insensitive fashion.
         /// </summary>
